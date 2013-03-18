@@ -23,7 +23,7 @@ function test (name, counter, res) {
   tape(name, function (t) {
     var ticks = [];
     counter.every(1).start()
-    .on('tick', ticks.push.bind(ticks))
+    .on('tick', function (tick) { ticks.push(tick) })
     .on('end', function () {
       t.deepEqual(ticks, res, 'steps');
       t.end();
