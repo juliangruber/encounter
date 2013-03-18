@@ -3,6 +3,8 @@
 
 Flexible reliable counting. Solved once and for all.
 
+[![Build Status](https://travis-ci.org/juliangruber/encounter.png)](https://travis-ci.org/juliangruber/encounter)
+
 ## Usage
 
 ```js
