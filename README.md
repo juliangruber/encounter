@@ -1,4 +1,3 @@
-
 # encounter
 
 Flexible reliable counting. Solved once and for all.
@@ -12,6 +11,7 @@ Flexible reliable counting. Solved once and for all.
 ```js
 var count = require('encounter');
 
+// count from -2 to 2 in steps of 01 every 100 ms
 count()
   .from(-2)
   .to(2)
