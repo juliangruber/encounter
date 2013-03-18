@@ -31,7 +31,7 @@ encounter.prototype.start = function () {
     : 1;
 
   var ticks = reverse * (self._to - self._from) / self._step;
-  var start = Date.now();
+  var start = +new Date();
   var tick = 0;
 
   function update () {
@@ -41,7 +41,7 @@ encounter.prototype.start = function () {
     }
 
     self.emit('tick', self._from + reverse * tick * self._step);
-    setTimeout(update, (start + self._every * ++tick) - Date.now());
+    setTimeout(update, (start + self._every * ++tick) - +new Date());
   }
 
   setTimeout(update);
