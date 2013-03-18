@@ -1,7 +1,7 @@
 {
   "name": "encounter",
   "description": "Flexible reliable counting.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "git://github.com/juliangruber/encounter.git"
@@ -9,7 +9,7 @@
   "homepage": "https://github.com/juliangruber/encounter",
   "main": "index.js",
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tape test/*.js"
   },
   "dependencies": {},
   "devDependencies": {
