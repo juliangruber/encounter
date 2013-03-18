@@ -41,7 +41,10 @@ encounter.prototype.start = function () {
     }
 
     self.emit('tick', self._from + reverse * tick * self._step);
-    setTimeout(update, (start + self._every * ++tick) - +new Date());
+
+    var dt = (start + self._every * ++tick) - +new Date();
+    if (dt < 0) dt = 0;
+    setTimeout(update, dt);
   }
 
   setTimeout(update);
