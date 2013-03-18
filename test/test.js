@@ -1,4 +1,4 @@
-var tap = require('tap');
+var tape = require('tape');
 var count = require('..');
 
 test('down',          count().from(2),               [2, 1, 0]);
@@ -9,23 +9,23 @@ test('steps',         count().to(4).step(2),         [0, 2, 4]);
 test('frac steps',    count().to(0.5).step(0.3), [0, 0.3, 0.5]);
 // test('every');
 
-tap.test('extend', function (t) {
-  t.ok(count.encounter);
+tape('extend', function (t) {
+  t.ok(count.encounter, 'fn exported');
   t.end();
 });
 
-tap.test('alias', function (t) {
-  t.equal(count().step, count().steps);
+tape('alias', function (t) {
+  t.equal(count().step, count().steps, 'steps alias');
   t.end();
 });
 
 function test (name, counter, res) {
-  tap.test(name, function (t) {
+  tape(name, function (t) {
     var ticks = [];
     counter.every(1).start()
     .on('tick', ticks.push.bind(ticks))
     .on('end', function () {
-      t.similar(ticks, res);
+      t.deepEqual(ticks, res, 'steps');
       t.end();
     })
   });
