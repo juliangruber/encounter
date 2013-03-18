@@ -4,6 +4,7 @@
 Flexible reliable counting. Solved once and for all.
 
 [![Build Status](https://travis-ci.org/juliangruber/encounter.png)](https://travis-ci.org/juliangruber/encounter)
+
 [![browser support](https://ci.testling.com/juliangruber/encounter.png)](https://ci.testling.com/juliangruber/encounter)
 
 ## Usage
