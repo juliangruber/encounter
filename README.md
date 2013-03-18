@@ -32,6 +32,8 @@ count().from(10).on('tick', console.log);
 count().to(10).every(100).on('tick', console.log);
 ```
 
+`encounter` makes sure it stays in time even when the event loop is busy.
+
 ## API
 
 ### var count = encounter()
