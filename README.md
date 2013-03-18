@@ -30,10 +30,10 @@ count()
 
 ```js
 // count down
-count().from(10).on('tick', console.log);
+count().from(10).start().on('tick', console.log);
 
 // fast count up
-count().to(10).every(100).on('tick', console.log);
+count().to(10).every(100).start().on('tick', console.log);
 ```
 
 `encounter` makes sure it stays in time even when the event loop is busy.
