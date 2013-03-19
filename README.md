@@ -44,19 +44,19 @@ count().to(10).every(100).on('tick', console.log);
 
 ### count.from(val)
 
-Start counting at `val`.
+Start counting at `val`. Defaults to `0`.
 
 ### count.to(val)
 
-Count until `val`.
+Count until `val`. Defaults to `0`.
 
 ### count.step(val)
 
-Progress the counter by `val` each step.
+Progress the counter by `val` each step. Defaults to `1`.
 
 ### count.every(val)
 
-Progress the counter every `val` milliseconds.
+Progress the counter every `val` milliseconds. Defaults to `1000`.
 
 ### count.start()
 
