@@ -1,4 +1,3 @@
-
 # encounter
 
 Flexible reliable counting. Uses [periodic](https://github.com/juliangruber/periodic) to stay on time.
@@ -12,6 +11,7 @@ Flexible reliable counting. Uses [periodic](https://github.com/juliangruber/peri
 ```js
 var count = require('encounter');
 
+// count from -2 to 2 in steps of 0.1 every 100 ms
 count()
   .from(-2)
   .to(2)
@@ -30,10 +30,10 @@ count()
 
 ```js
 // count down
-count().from(10).on('tick', console.log);
+count().from(10).start().on('tick', console.log);
 
 // fast count up
-count().to(10).every(100).on('tick', console.log);
+count().to(10).every(100).start().on('tick', console.log);
 ```
 
 `encounter` makes sure it stays in time even when the event loop is busy.
