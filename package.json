@@ -22,7 +22,9 @@
       "iphone/6", "ipad/6"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "repeated": "~0.0.0"
+  },
   "devDependencies": {
     "tape": "~0.3.0"
   },

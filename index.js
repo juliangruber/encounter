@@ -1,4 +1,5 @@
 var EventEmitter = require('events').EventEmitter;
+var repeated = require('repeated');
 var inherits = require('util').inherits;
 
 module.exports = function () {
@@ -31,23 +32,19 @@ encounter.prototype.start = function () {
     : 1;
 
   var ticks = reverse * (self._to - self._from) / self._step;
-  var start = +new Date();
   var tick = 0;
 
-  function update () {
-    if (tick >= ticks) {
-      self.emit('tick', self._to);
-      return self.emit('end');
-    }
+  setTimeout(function () {
+    repeated(self._every).on('tick', function () {
+      if (tick >= ticks) {
+        this.end();
+        self.emit('tick', self._to);
+        return self.emit('end');
+      }
 
-    self.emit('tick', self._from + reverse * tick * self._step);
-
-    var dt = (start + self._every * ++tick) - +new Date();
-    if (dt < 0) dt = 0;
-    setTimeout(update, dt);
-  }
-
-  setTimeout(update);
+      self.emit('tick', self._from + reverse * tick++ * self._step);
+    });
+  })
 
   return self;
 }
