@@ -1,7 +1,7 @@
 
 # encounter
 
-Flexible reliable counting. Solved once and for all.
+Flexible reliable counting. Uses [repeated](https://github.com/juliangruber/repeated) to stay on time.
 
 [![Build Status](https://travis-ci.org/juliangruber/encounter.png)](https://travis-ci.org/juliangruber/encounter)
 
