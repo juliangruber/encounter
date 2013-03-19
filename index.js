@@ -1,5 +1,5 @@
 var EventEmitter = require('events').EventEmitter;
-var repeated = require('repeated');
+var periodic = require('periodic');
 var inherits = require('util').inherits;
 
 module.exports = function () {
@@ -35,7 +35,7 @@ encounter.prototype.start = function () {
   var tick = 0;
 
   setTimeout(function () {
-    repeated(self._every).on('tick', function () {
+    periodic(self._every).on('tick', function () {
       if (tick >= ticks) {
         this.end();
         self.emit('tick', self._to);
