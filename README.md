@@ -78,6 +78,12 @@ With [npm](http://npmjs.org) do
 $ npm install encounter
 ```
 
+Alternatively, with [component](http://component.io) do
+
+```bash
+$ component install juliangruber/encounter
+```
+
 ## License
 
 (MIT)

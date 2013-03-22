@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="../build/build.js"></script>
+    <script>
+      var count = require('encounter');
+
+      test('down',          count().from(2),               [2, 1, 0]);
+      test('up',            count().to(2),                 [0, 1, 2]);
+      test('down negative', count().from(1).to(-1),       [1, 0, -1]);
+      test('up negative',   count().from(-1).to(1),       [-1, 0, 1]);
+      test('steps',         count().to(4).step(2),         [0, 2, 4]);
+      test('frac steps',    count().to(0.5).step(0.3), [0, 0.3, 0.5]);
+      // test('every');
+
+      if (!count.encounter) throw new Error('not exported');
+      if (count().step != count().steps) throw new Error('step not aliased');
+
+      var toTest = 6;
+      var testNum = 1;
+
+      function test (name, counter, res) {
+        var ticks = [];
+        counter.every(1).start()
+        .on('tick', function (tick) { ticks.push(tick) })
+        .on('end', function () {
+          if (ticks.length != res.length) throw new Error('not all ticks caught');
+          if (testNum++ == toTest) alert('success');
+        })
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

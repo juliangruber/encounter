@@ -1,6 +1,7 @@
 var EventEmitter = require('events').EventEmitter;
 var periodic = require('periodic');
-var inherits = require('util').inherits;
+var inherits;
+try { inherits = require('util').inherits } catch (_) { inherits = require('inherit') }
 
 module.exports = function () {
   return new encounter();
