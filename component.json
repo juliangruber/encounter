@@ -2,7 +2,7 @@
   "name": "encounter",
   "repo": "juliangruber/encounter",
   "description": "Flexible reliable counting.",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "keywords": [
     "time",
     "timer",
@@ -15,8 +15,7 @@
   ],
   "dependencies": {
     "juliangruber/periodic": "0.0.1",
-    "juliangruber/events" : "0.0.1",
-    "component/inherit" : "0.0.2"
+    "juliangruber/events" : "0.0.1"
   },
   "scripts": [
     "index.js"
