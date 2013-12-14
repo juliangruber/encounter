@@ -2,7 +2,7 @@
   "name": "encounter",
   "repo": "juliangruber/encounter",
   "description": "Flexible reliable counting.",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "keywords": [
     "time",
     "timer",
