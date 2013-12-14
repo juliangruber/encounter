@@ -1,13 +1,10 @@
 var EventEmitter = require('events').EventEmitter;
 var periodic = require('periodic');
 
-module.exports = function () {
-  return new encounter();
-}
+module.exports = Encounter;
 
-module.exports.encounter = encounter;
-
-function encounter () {
+function Encounter () {
+  if (!(this instanceof Encounter)) return new Encounter();
   EventEmitter.call(this);
   this.from(0);
   this.to(0);
@@ -15,30 +12,30 @@ function encounter () {
   this.every(1000);
 }
 
-inherits(encounter, EventEmitter);
+inherits(Encounter, EventEmitter);
 
-encounter.prototype.from = function (val) {
+Encounter.prototype.from = function (val) {
   this._from = val;
   return this;
 };
 
-encounter.prototype.to = function (val) {
+Encounter.prototype.to = function (val) {
   this._to = val;
   return this;
 };
 
-encounter.prototype.step =
-encounter.prototype.steps = function (val) {
+Encounter.prototype.step =
+Encounter.prototype.steps = function (val) {
   this._step = val;
   return this;
 };
 
-encounter.prototype.every = function (val) {
+Encounter.prototype.every = function (val) {
   this._every = val;
   return this;
 };
 
-encounter.prototype.start = function () {
+Encounter.prototype.start = function () {
   var self = this;
 
   var reverse = self._to < self._from
