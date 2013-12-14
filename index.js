@@ -3,6 +3,13 @@ var periodic = require('periodic');
 
 module.exports = Encounter;
 
+/**
+ * Create a counter.
+ *
+ * @return {Encounter}
+ * @api public
+ */
+
 function Encounter () {
   if (!(this instanceof Encounter)) return new Encounter();
   EventEmitter.call(this);
@@ -14,26 +21,65 @@ function Encounter () {
 
 inherits(Encounter, EventEmitter);
 
-Encounter.prototype.from = function (val) {
-  this._from = val;
+/**
+ * Start counting from `num`.
+ *
+ * @param {Number} num
+ * @return {Encounter}
+ * @api public
+ */
+
+Encounter.prototype.from = function (num) {
+  this._from = num;
   return this;
 };
 
-Encounter.prototype.to = function (val) {
-  this._to = val;
+/**
+ * End counting at `num`.
+ *
+ * @param {Number} num
+ * @return {Encounter}
+ * @api public
+ */
+
+Encounter.prototype.to = function (num) {
+  this._to = num;
   return this;
 };
+
+/**
+ * Step `size`.
+ *
+ * @param {Number} size
+ * @return {Encounter}
+ * @api public
+ */
 
 Encounter.prototype.step =
-Encounter.prototype.steps = function (val) {
-  this._step = val;
+Encounter.prototype.steps = function (size) {
+  this._step = size;
   return this;
 };
 
-Encounter.prototype.every = function (val) {
-  this._every = val;
+/**
+ * Progress every `x` milliseconds.
+ *
+ * @param {Number} int
+ * @return {Encounter}
+ * @api public
+ */
+
+Encounter.prototype.every = function (x) {
+  this._every = x;
   return this;
 };
+
+/**
+ * Start counting.
+ *
+ * @return {Encounter}
+ * @api public
+ */
 
 Encounter.prototype.start = function () {
   var self = this;
