@@ -91,8 +91,10 @@ Encounter.prototype.start = function() {
   var ticks = reverse * (self._to - self._from) / self._step;
   var tick = 0;
 
-  setTimeout(function () {
-    periodic(self._every).on('tick', function () {
+  self.timeout = setTimeout(function () {
+    delete self.timeout;
+    self.periodic = periodic(self._every);
+    self.periodic.on('tick', function () {
       if (tick >= ticks) {
         this.end();
         self.emit('tick', self._to);
@@ -101,7 +103,21 @@ Encounter.prototype.start = function() {
 
       self.emit('tick', self._from + reverse * tick++ * self._step);
     });
-  })
+  });
 
   return self;
+};
+
+/**
+ * End counting.
+ *
+ * @return {Encounter}
+ * @api public
+ */
+
+Encounter.prototype.end = function() {
+  if (this.periodic) this.periodic.end();
+  if (this.timeout) clearTimeout(this.timeout);
+  this.emit('end');
+  return this;
 };

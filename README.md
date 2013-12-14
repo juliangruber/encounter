@@ -62,6 +62,10 @@ Progress the counter every `val` milliseconds. Defaults to `1000`.
 
 Start counting.
 
+### count.end()
+
+End counting.
+
 ### count.on('tick', fn)
 
 Calls `fn` with the current tick value, starting from the initial value.
