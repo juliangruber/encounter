@@ -7,7 +7,6 @@ test('down negative', count().from(1).to(-1),       [1, 0, -1]);
 test('up negative',   count().from(-1).to(1),       [-1, 0, 1]);
 test('steps',         count().to(4).step(2),         [0, 2, 4]);
 test('frac steps',    count().to(0.5).step(0.3), [0, 0.3, 0.5]);
-// test('every');
 
 tape('extend', function (t) {
   t.ok(count.encounter, 'fn exported');
