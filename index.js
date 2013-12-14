@@ -10,7 +10,7 @@ module.exports = Encounter;
  * @api public
  */
 
-function Encounter () {
+function Encounter() {
   if (!(this instanceof Encounter)) return new Encounter();
   EventEmitter.call(this);
   this.from(0);
@@ -29,7 +29,7 @@ inherits(Encounter, EventEmitter);
  * @api public
  */
 
-Encounter.prototype.from = function (num) {
+Encounter.prototype.from = function(num) {
   this._from = num;
   return this;
 };
@@ -42,7 +42,7 @@ Encounter.prototype.from = function (num) {
  * @api public
  */
 
-Encounter.prototype.to = function (num) {
+Encounter.prototype.to = function(num) {
   this._to = num;
   return this;
 };
@@ -56,7 +56,7 @@ Encounter.prototype.to = function (num) {
  */
 
 Encounter.prototype.step =
-Encounter.prototype.steps = function (size) {
+Encounter.prototype.steps = function(size) {
   this._step = size;
   return this;
 };
@@ -69,7 +69,7 @@ Encounter.prototype.steps = function (size) {
  * @api public
  */
 
-Encounter.prototype.every = function (x) {
+Encounter.prototype.every = function(x) {
   this._every = x;
   return this;
 };
@@ -81,7 +81,7 @@ Encounter.prototype.every = function (x) {
  * @api public
  */
 
-Encounter.prototype.start = function () {
+Encounter.prototype.start = function() {
   var self = this;
 
   var reverse = self._to < self._from
