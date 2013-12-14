@@ -55,8 +55,7 @@ Encounter.prototype.to = function(num) {
  * @api public
  */
 
-Encounter.prototype.step =
-Encounter.prototype.steps = function(size) {
+Encounter.prototype.step = function(size) {
   this._step = size;
   return this;
 };
