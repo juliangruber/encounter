@@ -18,7 +18,7 @@
     "juliangruber/events" : "0.0.1"
   },
   "scripts": [
-    "index.js"
+    "index.js", "lib/inherits.js"
   ],
   "license": "MIT"
 }

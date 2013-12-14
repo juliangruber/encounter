@@ -1,5 +1,6 @@
 var EventEmitter = require('events').EventEmitter;
 var periodic = require('periodic');
+var inherits = require('./lib/inherits');
 
 module.exports = Encounter;
 
@@ -103,11 +104,4 @@ Encounter.prototype.start = function() {
   })
 
   return self;
-};
-
-function inherits (a, b){
-  var fn = function(){};
-  fn.prototype = b.prototype;
-  a.prototype = new fn;
-  a.prototype.constructor = a;
 };
