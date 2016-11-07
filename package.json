@@ -27,7 +27,7 @@
     "periodic": "~0.0.0"
   },
   "devDependencies": {
-    "tape": "~2.3.0"
+    "tape": "~4.6.2"
   },
   "keywords": [
     "time",
